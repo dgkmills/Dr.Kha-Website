@@ -1,0 +1,5 @@
+# This file now only needs to tell Netlify where to find the function.
+# The website files will be found automatically at the root.
+[functions]
+  directory = "netlify/functions/"
+
