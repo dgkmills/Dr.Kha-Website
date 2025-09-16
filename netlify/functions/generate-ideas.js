@@ -20,8 +20,8 @@ exports.handler = async function (event, context) {
       };
     }
     
-    // Call the Gemini API
-    const model = genAI.getGenerativeModel({ model: "gemini-1.0-pro" });
+    // Call the Gemini API with the corrected model name
+    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
     const result = await model.generateContent(prompt);
     const response = await result.response;
 
@@ -39,4 +39,3 @@ exports.handler = async function (event, context) {
     };
   }
 };
-
