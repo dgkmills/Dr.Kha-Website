@@ -20,8 +20,8 @@ exports.handler = async function (event, context) {
       };
     }
     
-    // Call the Gemini API with the corrected model name
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+    // Call the Gemini API with the latest recommended model
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
     const result = await model.generateContent(prompt);
     const response = await result.response;
 
