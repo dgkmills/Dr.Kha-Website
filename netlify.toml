@@ -1,5 +1,8 @@
-# This file now only needs to tell Netlify where to find the function.
-# The website files will be found automatically at the root.
+# This tells Netlify where to find the function.
 [functions]
   directory = "netlify/functions/"
 
+# This plugin automatically finds your function's package.json
+# and installs its dependencies during the build.
+[[plugins]]
+  package = "@netlify/plugin-functions-install-core"
