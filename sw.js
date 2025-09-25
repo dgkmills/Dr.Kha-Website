@@ -3,7 +3,7 @@ const urlsToCache = [
   '/',
   '/index.html',
   '/Headshot.jpg',
-  'https://cdn.tailwindcss.com',
+  // 'https://cdn.tailwindcss.com', // Removed to prevent CORS errors
   'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'
 ];
 
@@ -32,3 +32,4 @@ self.addEventListener('fetch', event => {
     )
   );
 });
+

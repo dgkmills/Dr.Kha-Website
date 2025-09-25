@@ -1,7 +1,6 @@
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
-// This line securely accesses the API key you will set in the Netlify dashboard.
-// It is never exposed to the public.
+// This line securely accesses the API key you set in the Netlify dashboard.
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 exports.handler = async function (event, context) {
@@ -20,8 +19,8 @@ exports.handler = async function (event, context) {
       };
     }
     
-    // Call the Gemini API with the latest recommended model
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
+    // **FIX:** Changed the model from "gemini-1.5-flash-latest" to a stable version.
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-001" });
     const result = await model.generateContent(prompt);
     const response = await result.response;
 
