@@ -19,7 +19,7 @@ exports.handler = async function (event, context) {
       };
     }
     
-    // **FIX:** Changed the model to the correct stable identifier.
+    // **FIX:** The model name has been updated to the correct stable identifier.
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
     const result = await model.generateContent(prompt);
     const response = await result.response;
@@ -38,3 +38,4 @@ exports.handler = async function (event, context) {
     };
   }
 };
+
