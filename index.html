@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asst. Prof. Dr. Ketwalee Kositkanawuth - Portfolio</title>
+    
+    <!-- PWA Manifest and Theme Color -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#10b981">
+    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,6 +30,17 @@
         .card-hover:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .publication-link {
+            transition: background-color 0.3s ease;
+        }
+        #hidden-publications {
+            transition: all 0.5s ease-in-out;
+            max-height: 0;
+            overflow: hidden;
+        }
+        #hidden-publications.show {
+            max-height: 1000px; /* Adjust as needed */
         }
     </style>
 </head>
@@ -119,10 +136,56 @@
                     </p>
                 </div>
                 <div class="mt-10 space-y-4">
-                    <div class="bg-gray-50 p-4 rounded-lg">Eco-airport management strategies toward Sustainable Development Goals (SDGs) : A case study of Haneda International Airport, 2024.</div>
-                    <div class="bg-gray-50 p-4 rounded-lg">Hybrid Cornstalk Biochar-TiO₂ for Enhanced Color Degradation in Wastewater Treatment, 2024.</div>
-                    <div class="bg-gray-50 p-4 rounded-lg">Acid modification of waterworks sludge for dye removals: synthetic and real textile wastewater, 2022.</div>
-                    <div class="bg-gray-50 p-4 rounded-lg">CURRENT SITUATION AND CHALLENGES OF MUNICIPAL SOLID WASTE MANAGEMENT IN THAILAND: ANALYSIS OF WASTE FLOW DIAGRAM, 2022.</div>
+                    <!-- Visible Publications -->
+                    <a href="https://kirim.kmutt.ac.th/converis/portal/detail/Publication/1504311360?lang=en_GB" target="_blank" rel="noopener noreferrer" class="block bg-gray-50 p-6 rounded-lg hover:bg-emerald-50 publication-link shadow-sm">
+                        <p class="font-semibold text-gray-800">Eco-airport management strategies toward Sustainable Development Goals (SDGs): A case study of Haneda International Airport</p>
+                        <p class="text-sm text-gray-500 mt-1">Journal Article, 2024</p>
+                    </a>
+                    <a href="https://kirim.kmutt.ac.th/converis/portal/detail/Publication/1504312391?lang=en_GB" target="_blank" rel="noopener noreferrer" class="block bg-gray-50 p-6 rounded-lg hover:bg-emerald-50 publication-link shadow-sm">
+                        <p class="font-semibold text-gray-800">Hybrid Cornstalk Biochar-TiO₂ for Enhanced Color Degradation in Wastewater Treatment</p>
+                        <p class="text-sm text-gray-500 mt-1">Conference Proceedings, 2024</p>
+                    </a>
+                    <a href="https://kirim.kmutt.ac.th/converis/portal/detail/Publication/1504312702?lang=en_GB" target="_blank" rel="noopener noreferrer" class="block bg-gray-50 p-6 rounded-lg hover:bg-emerald-50 publication-link shadow-sm">
+                        <p class="font-semibold text-gray-800">Urea-doped corn cob biochar for CO2 capture</p>
+                        <p class="text-sm text-gray-500 mt-1">Conference Proceedings, 2024</p>
+                    </a>
+                    <a href="https://kirim.kmutt.ac.th/converis/portal/detail/Publication/1450570397?lang=en_GB" target="_blank" rel="noopener noreferrer" class="block bg-gray-50 p-6 rounded-lg hover:bg-emerald-50 publication-link shadow-sm">
+                        <p class="font-semibold text-gray-800">Decolorization of wastewater by photocatalysis using cornstalk biochar embedded titanium dioxide</p>
+                        <p class="text-sm text-gray-500 mt-1">Conference Proceedings, 2023</p>
+                    </a>
+
+                    <!-- Hidden Publications -->
+                    <div id="hidden-publications" class="space-y-4">
+                        <a href="https://kirim.kmutt.ac.th/converis/portal/detail/Publication/1258007208?lang=en_GB" target="_blank" rel="noopener noreferrer" class="block bg-gray-50 p-6 rounded-lg hover:bg-emerald-50 publication-link shadow-sm">
+                             <p class="font-semibold text-gray-800">Acid modification of waterworks sludge for dye removals: synthetic and real textile wastewater</p>
+                            <p class="text-sm text-gray-500 mt-1">Journal Article, 2022</p>
+                        </a>
+                        <a href="https://kirim.kmutt.ac.th/converis/portal/detail/Publication/1258007577?lang=en_GB" target="_blank" rel="noopener noreferrer" class="block bg-gray-50 p-6 rounded-lg hover:bg-emerald-50 publication-link shadow-sm">
+                            <p class="font-semibold text-gray-800">CURRENT SITUATION AND CHALLENGES OF MUNICIPAL SOLID WASTE MANAGEMENT IN THAILAND: ANALYSIS OF WASTE FLOW DIAGRAM</p>
+                            <p class="text-sm text-gray-500 mt-1">Conference Proceedings, 2022</p>
+                        </a>
+                         <a href="https://kirim.kmutt.ac.th/converis/portal/detail/Publication/1008857053?lang=en_GB" target="_blank" rel="noopener noreferrer" class="block bg-gray-50 p-6 rounded-lg hover:bg-emerald-50 publication-link shadow-sm">
+                            <p class="font-semibold text-gray-800">Granular waterworks sludge-biochar composites: Characterization and dye removal application</p>
+                            <p class="text-sm text-gray-500 mt-1">Journal Article, 2022</p>
+                        </a>
+                        <a href="https://kirim.kmutt.ac.th/converis/portal/detail/Publication/779611143?lang=en_GB" target="_blank" rel="noopener noreferrer" class="block bg-gray-50 p-6 rounded-lg hover:bg-emerald-50 publication-link shadow-sm">
+                            <p class="font-semibold text-gray-800">Investigation of Biochar Production from Copyrolysis of Rice Husk and Plastic</p>
+                            <p class="text-sm text-gray-500 mt-1">Journal Article, 2021</p>
+                        </a>
+                        <a href="https://kirim.kmutt.ac.th/converis/portal/detail/Publication/601180483?lang=en_GB" target="_blank" rel="noopener noreferrer" class="block bg-gray-50 p-6 rounded-lg hover:bg-emerald-50 publication-link shadow-sm">
+                            <p class="font-semibold text-gray-800">Renewable Energy from Waste: Investigation of Co-pyrolysis between Sargassum Macroalgae and Polystyrene</p>
+                            <p class="text-sm text-gray-500 mt-1">Journal Article, 2017</p>
+                        </a>
+                        <a href="https://kirim.kmutt.ac.th/converis/portal/detail/Publication/600944626?lang=en_GB" target="_blank" rel="noopener noreferrer" class="block bg-gray-50 p-6 rounded-lg hover:bg-emerald-50 publication-link shadow-sm">
+                            <p class="font-semibold text-gray-800">Characterization of rice straw and bagasse refuse derived fuel</p>
+                            <p class="text-sm text-gray-500 mt-1">Conference Proceedings, 2016</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-8 text-center">
+                    <button id="toggle-publications-btn" class="bg-emerald-500 text-white px-6 py-2 rounded-lg hover:bg-emerald-600 transition duration-300 font-medium">
+                        Show All Publications
+                    </button>
                 </div>
             </div>
         </section>
@@ -203,6 +266,27 @@
     </main>
     
     <script>
+        // Publication Toggle Logic
+        const toggleBtn = document.getElementById('toggle-publications-btn');
+        const hiddenPublications = document.getElementById('hidden-publications');
+
+        toggleBtn.addEventListener('click', () => {
+            const isHidden = hiddenPublications.classList.contains('hidden');
+            if (isHidden) {
+                hiddenPublications.classList.remove('hidden');
+                setTimeout(() => {
+                    hiddenPublications.classList.add('show');
+                    toggleBtn.textContent = 'Show Less';
+                }, 10);
+            } else {
+                hiddenPublications.classList.remove('show');
+                 setTimeout(() => {
+                    hiddenPublications.classList.add('hidden');
+                    toggleBtn.textContent = 'Show All Publications';
+                }, 500); // Match transition duration
+            }
+        });
+
         // Gemini Idea Generator Logic
         const generateBtn = document.getElementById('generate-ideas-btn');
         const clearBtn = document.getElementById('clear-form-btn');
@@ -345,6 +429,17 @@
             customSubcategoryContainer.classList.add('hidden');
             customSubcategoryInput.value = '';
         });
+
+        // Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').then(registration => {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, err => {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
     </script>
 </body>
 </html>
