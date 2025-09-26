@@ -402,11 +402,11 @@
             }
 
             try {
+                // The structure of the response has changed slightly with the updated function
                 const result = await callNetlifyFunction(prompt);
-                const candidate = result.candidates?.[0];
-
-                if (candidate && candidate.content?.parts?.[0]?.text) {
-                    let formattedText = candidate.content.parts[0].text;
+                
+                if (result && result.content?.parts?.[0]?.text) {
+                    let formattedText = result.content.parts[0].text;
                     formattedText = formattedText.replace(/\n/g, '<br>');
                     ideasOutput.innerHTML = `<div class="p-4 bg-gray-100 rounded-md">${formattedText}</div>`;
                 } else {
@@ -443,4 +443,3 @@
     </script>
 </body>
 </html>
-
