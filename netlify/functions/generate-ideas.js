@@ -19,7 +19,7 @@ exports.handler = async function (event, context) {
       };
     }
     
-    // **FIX:** Switched to the stable `gemini-pro` model to ensure availability.
+    // Using the stable `gemini-pro` model to ensure availability.
     const model = genAI.getGenerativeModel({ model: "gemini-pro" });
     const result = await model.generateContent(prompt);
     const response = await result.response;
