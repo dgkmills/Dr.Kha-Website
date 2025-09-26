@@ -2,6 +2,7 @@
   "name": "generate-ideas-function",
   "version": "1.0.0",
   "dependencies": {
-    "@google/generative-ai": "0.7.1"
+    "@google/generative-ai": "0.12.0"
   }
 }
+
