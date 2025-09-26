@@ -12,7 +12,7 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -41,6 +41,11 @@
         }
         #hidden-publications.show {
             max-height: 1000px; /* Adjust as needed */
+        }
+        /* Style for the honeypot field to hide it */
+        .hidden-field {
+            position: absolute;
+            left: -5000px;
         }
     </style>
 </head>
@@ -190,64 +195,43 @@
             </div>
         </section>
 
-        <!-- Mentorship / Gemini Section -->
+        <!-- Mentorship / Research Opportunities Section -->
         <section id="mentorship" class="py-20 bg-gray-50">
             <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center">
                     <h2 class="text-base text-emerald-600 font-semibold tracking-wide uppercase">Teaching & Mentorship</h2>
                     <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                        Prospective Student Research Idea Generator
+                        Research Opportunities for Prospective Students
                     </p>
                     <p class="mt-4 text-lg text-gray-500">
-                        Interested in joining my research team? Select an area of my expertise below to generate potential graduate research project ideas.
+                        I am always looking for motivated graduate students to join my research team. Below are some examples of research areas we can explore together. If these topics align with your interests, please reach out to discuss your ideas.
                     </p>
                 </div>
 
-                <div class="mt-12 bg-white p-8 rounded-xl shadow-lg">
-                    <div class="space-y-6">
-                        <div>
-                            <label for="topic-select" class="block mb-2 text-sm font-medium text-gray-900">1. Select an Expertise Area:</label>
-                            <select id="topic-select" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-emerald-500 focus:border-emerald-500 block w-full p-2.5">
-                                <option selected disabled value="">Choose a topic</option>
-                                <option value="Adsorption">Adsorption</option>
-                                <option value="Biochar Production">Biochar Production</option>
-                                <option value="Biomass Thermochemical Conversion">Biomass Thermochemical Conversion</option>
-                                <option value="Carbon Footprint">Carbon Footprint</option>
-                                <option value="Energy Conversion from Biomass">Energy Conversion from Biomass</option>
-                                <option value="Pyrolysis">Pyrolysis</option>
-                                <option value="Waste Utilization">Waste Utilization</option>
-                            </select>
-                        </div>
-
-                        <div id="subcategory-container" class="hidden">
-                            <label for="subcategory-select" class="block mb-2 text-sm font-medium text-gray-900">2. Select a Subcategory:</label>
-                            <select id="subcategory-select" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-emerald-500 focus:border-emerald-500 block w-full p-2.5">
-                                <!-- Populated by JS -->
-                            </select>
-                        </div>
-                        <div id="custom-subcategory-container" class="hidden">
-                            <label for="custom-subcategory-input" class="block mb-2 text-sm font-medium text-gray-900">Please specify your subcategory:</label>
-                            <input type="text" id="custom-subcategory-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-emerald-500 focus:border-emerald-500 block w-full p-2.5" placeholder="e.g., Algae-based biofuels">
-                        </div>
-                        <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
-                            <button id="generate-ideas-btn" class="w-full bg-emerald-500 text-white px-4 py-3 rounded-lg hover:bg-emerald-600 transition duration-300 font-medium text-base">
-                                Generate Research Project Ideas
-                            </button>
-                            <button id="clear-form-btn" class="w-full bg-gray-200 text-gray-700 px-4 py-3 rounded-lg hover:bg-gray-300 transition duration-300 font-medium text-base">
-                                Clear
-                            </button>
-                        </div>
+                <div class="mt-12 bg-white p-8 rounded-xl shadow-lg space-y-8">
+                    <!-- Example Research Idea 1 -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900">Advanced Biochar Production from Agricultural Waste</h3>
+                        <p class="mt-2 text-gray-600">
+                            This research focuses on optimizing pyrolysis conditions for various types of local agricultural waste (e.g., rice husks, corn cobs) to produce high-quality biochar. The project will investigate how different temperatures and catalysts affect the biochar's properties for applications in carbon sequestration and soil amendment.
+                        </p>
+                    </div>
+                    
+                    <!-- Example Research Idea 2 -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900">Waste-to-Energy: Co-pyrolysis of Biomass and Plastic Waste</h3>
+                        <p class="mt-2 text-gray-600">
+                            This project explores the thermochemical conversion of mixed biomass and plastic waste streams into valuable syngas and bio-oil. The research aims to analyze the synergistic effects during co-pyrolysis to improve energy yield and reduce harmful environmental byproducts, contributing to a more circular economy.
+                        </p>
                     </div>
 
-                    <div id="loading-spinner" class="hidden text-center py-8">
-                        <svg class="animate-spin -ml-1 mr-3 h-8 w-8 text-emerald-500 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                        </svg>
-                        <p class="mt-2 text-gray-500">Generating ideas...</p>
+                    <!-- Example Research Idea 3 -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900">Development of Novel Adsorbents for Wastewater Treatment</h3>
+                        <p class="mt-2 text-gray-600">
+                           This research involves creating and testing novel, low-cost adsorbents from industrial sludge or waste biomass for the removal of heavy metals and dyes from industrial wastewater. The project will characterize the adsorbent materials and evaluate their efficiency and reusability under various conditions.
+                        </p>
                     </div>
-
-                    <div id="ideas-output" class="mt-8 space-y-4 text-gray-700"></div>
                 </div>
             </div>
         </section>
@@ -255,11 +239,52 @@
 
         <!-- Contact Section -->
         <footer id="contact" class="bg-gray-800 text-white">
-            <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-center">
-                 <h2 class="text-2xl font-bold">Contact Information</h2>
-                 <p class="mt-4">Department of Environmental Engineering, KMUTT</p>
-                 <p>Email: <a href="mailto:ketwalee.kos@kmutt.ac.th" class="text-emerald-400 hover:underline">ketwalee.kos@kmutt.ac.th</a></p>
-                 <p>Phone: 9161</p>
+            <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+                 <div class="max-w-xl mx-auto text-center">
+                    <h2 class="text-3xl font-extrabold">Get in Touch</h2>
+                    <p class="mt-4 text-lg text-gray-300">Have questions about my research or potential opportunities? Send me a message, and I'll get back to you as soon as possible.</p>
+                 </div>
+                 <div class="mt-12 max-w-xl mx-auto">
+                    <!-- The Netlify form starts here. It needs a name and the data-netlify attribute. -->
+                    <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+                        <!-- This hidden input is required for Netlify to identify the form -->
+                        <input type="hidden" name="form-name" value="contact" />
+                        <!-- This is a honeypot field for spam prevention. It should be hidden from users. -->
+                        <p class="hidden-field">
+                            <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+                        </p>
+                        
+                        <div class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+                            <div class="sm:col-span-2">
+                                <label for="name" class="block text-sm font-medium text-gray-300">Name</label>
+                                <div class="mt-1">
+                                    <input type="text" name="name" id="name" required class="py-3 px-4 block w-full shadow-sm bg-gray-700 border-gray-600 rounded-md focus:ring-emerald-500 focus:border-emerald-500">
+                                </div>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label for="email" class="block text-sm font-medium text-gray-300">Email</label>
+                                <div class="mt-1">
+                                    <input id="email" name="email" type="email" autocomplete="email" required class="py-3 px-4 block w-full shadow-sm bg-gray-700 border-gray-600 rounded-md focus:ring-emerald-500 focus:border-emerald-500">
+                                </div>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label for="message" class="block text-sm font-medium text-gray-300">Message</label>
+                                <div class="mt-1">
+                                    <textarea id="message" name="message" rows="4" required class="py-3 px-4 block w-full shadow-sm bg-gray-700 border-gray-600 rounded-md focus:ring-emerald-500 focus:border-emerald-500"></textarea>
+                                </div>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <button type="submit" class="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500">
+                                    Send Message
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="mt-8 text-center text-gray-400">
+                        <p>Or contact me directly:</p>
+                        <p>Email: <a href="mailto:ketwalee.kos@kmutt.ac.th" class="text-emerald-400 hover:underline">ketwalee.kos@kmutt.ac.th</a> | Phone: 9161</p>
+                    </div>
+                 </div>
             </div>
         </footer>
 
@@ -287,149 +312,6 @@
             }
         });
 
-        // Gemini Idea Generator Logic
-        const generateBtn = document.getElementById('generate-ideas-btn');
-        const clearBtn = document.getElementById('clear-form-btn');
-        const topicSelect = document.getElementById('topic-select');
-        const subcategoryContainer = document.getElementById('subcategory-container');
-        const subcategorySelect = document.getElementById('subcategory-select');
-        const customSubcategoryContainer = document.getElementById('custom-subcategory-container');
-        const customSubcategoryInput = document.getElementById('custom-subcategory-input');
-        const ideasOutput = document.getElementById('ideas-output');
-        const loadingSpinner = document.getElementById('loading-spinner');
-
-        const expertiseData = {
-            "Adsorption": ["Wastewater Contaminant Removal", "Gas Purification & Separation"],
-            "Biochar Production": ["Agricultural Waste Valorization", "Sludge Management"],
-            "Biomass Thermochemical Conversion": ["Gasification Techniques", "Hydrothermal Liquefaction"],
-            "Carbon Footprint": ["Life Cycle Assessment (LCA)", "Corporate Carbon Accounting"],
-            "Energy Conversion from Biomass": ["Biofuel Production", "Waste-to-Energy Systems"],
-            "Pyrolysis": ["Plastic Waste Pyrolysis", "Catalytic Pyrolysis"],
-            "Waste Utilization": ["Construction & Demolition Waste", "Industrial Symbiosis"]
-        };
-
-        topicSelect.addEventListener('change', () => {
-            const selectedTopic = topicSelect.value;
-            customSubcategoryContainer.classList.add('hidden');
-            customSubcategoryInput.value = '';
-
-            if (selectedTopic && expertiseData[selectedTopic]) {
-                const subcategories = expertiseData[selectedTopic];
-                subcategorySelect.innerHTML = `<option selected disabled value="">Choose a subcategory</option>`;
-                
-                const generalOption = document.createElement('option');
-                generalOption.value = 'General';
-                generalOption.textContent = 'General';
-                subcategorySelect.appendChild(generalOption);
-                
-                subcategories.forEach(sub => {
-                    const option = document.createElement('option');
-                    option.value = sub;
-                    option.textContent = sub;
-                    subcategorySelect.appendChild(option);
-                });
-
-                const otherOption = document.createElement('option');
-                otherOption.value = 'Other';
-                otherOption.textContent = 'Other (Please specify)';
-                subcategorySelect.appendChild(otherOption);
-
-                subcategoryContainer.classList.remove('hidden');
-            } else {
-                subcategoryContainer.classList.add('hidden');
-            }
-        });
-
-        subcategorySelect.addEventListener('change', () => {
-            if (subcategorySelect.value === 'Other') {
-                customSubcategoryContainer.classList.remove('hidden');
-            } else {
-                customSubcategoryContainer.classList.add('hidden');
-            }
-        });
-
-        const callNetlifyFunction = async (prompt) => {
-            // The function will be available at this relative path
-            const functionUrl = '/.netlify/functions/generate-ideas';
-
-            try {
-                const response = await fetch(functionUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ prompt: prompt }),
-                });
-
-                if (!response.ok) {
-                    const errorData = await response.json();
-                    throw new Error(errorData.error || `HTTP error! status: ${response.status}`);
-                }
-
-                const data = await response.json();
-                return data;
-
-            } catch (error) {
-                console.error("Fetch call to Netlify Function failed:", error);
-                throw error;
-            }
-        };
-
-        generateBtn.addEventListener('click', async () => {
-            const selectedTopic = topicSelect.value;
-            let selectedSubcategory = subcategorySelect.value;
-
-            if (selectedSubcategory === 'Other') {
-                selectedSubcategory = customSubcategoryInput.value.trim();
-                if (!selectedSubcategory) {
-                    ideasOutput.innerHTML = '<p class="text-red-500 text-center">Please specify your custom subcategory.</p>';
-                    return;
-                }
-            }
-
-            if (!selectedTopic || !selectedSubcategory) {
-                ideasOutput.innerHTML = '<p class="text-red-500 text-center">Please select a topic and a subcategory first.</p>';
-                return;
-            }
-
-            ideasOutput.innerHTML = '';
-            loadingSpinner.classList.remove('hidden');
-            generateBtn.disabled = true;
-
-            let prompt;
-            if (selectedSubcategory.toLowerCase() === 'general') {
-                 prompt = `You are an expert Environmental Engineering professor. Generate exactly three distinct and innovative research project ideas for a graduate student. The research should be supervised by a professor specializing in the general area of "${selectedTopic}". For each idea, provide a clear title and a concise one-paragraph description (2-3 sentences). The tone should be encouraging and academic. Present the output as a numbered list.`;
-            } else {
-                 prompt = `You are an expert Environmental Engineering professor. Generate exactly three distinct and innovative research project ideas for a graduate student. The research should be supervised by a professor specializing in "${selectedTopic}" with a specific focus on "${selectedSubcategory}". For each idea, provide a clear title and a concise one-paragraph description (2-3 sentences). The tone should be encouraging and academic. Present the output as a numbered list.`;
-            }
-
-            try {
-                // The structure of the response has changed slightly with the updated function
-                const result = await callNetlifyFunction(prompt);
-                
-                if (result && result.content?.parts?.[0]?.text) {
-                    let formattedText = result.content.parts[0].text;
-                    formattedText = formattedText.replace(/\n/g, '<br>');
-                    ideasOutput.innerHTML = `<div class="p-4 bg-gray-100 rounded-md">${formattedText}</div>`;
-                } else {
-                     throw new Error("No valid content received from the API. The response may be empty or blocked.");
-                }
-            } catch (error) {
-                console.error("Error generating ideas:", error);
-                ideasOutput.innerHTML = `<p class="text-red-500 text-center">Sorry, an error occurred while generating ideas. Please check the function logs on Netlify for details.</p>`;
-            } finally {
-                loadingSpinner.classList.add('hidden');
-                generateBtn.disabled = false;
-            }
-        });
-
-        clearBtn.addEventListener('click', () => {
-            topicSelect.value = "";
-            ideasOutput.innerHTML = '';
-            loadingSpinner.classList.add('hidden');
-            subcategoryContainer.classList.add('hidden');
-            customSubcategoryContainer.classList.add('hidden');
-            customSubcategoryInput.value = '';
-        });
-
         // Service Worker Registration
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
@@ -443,3 +325,4 @@
     </script>
 </body>
 </html>
+
